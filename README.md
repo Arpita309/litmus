@@ -19,10 +19,10 @@
 
 Litmus is a toolset to do cloud-native chaos engineering. Litmus provides tools to orchestrate chaos on Kubernetes to help SREs find weaknesses in their deployments. SREs use Litmus to run chaos experiments initially in the staging environment and eventually in production to find bugs, vulnerabilities. Fixing the weaknesses leads to increased resilience of the system.
 
-Litmus takes a cloud-native approach to create, manage and monitor chaos. Chaos is orchestrated using the following Kubernetes Custom Resource Definitions (**CRDs**):
+Litmus takes a cloud-native approach to create, manage, and monitor chaos. Chaos is orchestrated using the following Kubernetes Custom Resource Definitions (**CRDs**):
 
 - **ChaosEngine**: A resource to link a Kubernetes application or Kubernetes node to a ChaosExperiment. ChaosEngine is watched by Litmus' Chaos-Operator which then invokes Chaos-Experiments
-- **ChaosExperiment**: A resource to group the configuration parameters of a chaos experiment. ChaosExperiment CRs are created by the operator when experiments are invoked by ChaosEngine.
+- **ChaosExperiment**: A resource to group the configuration parameters of a chaotic experiment. ChaosExperiment CRs are created by the operator when experiments are invoked by ChaosEngine.
 - **ChaosResult**: A resource to hold the results of a chaos-experiment. The Chaos-exporter reads the results and exports the metrics into a configured Prometheus server.
 
 Chaos experiments are hosted on <a href="https://hub.litmuschaos.io" target="_blank">hub.litmuschaos.io</a>. It is a central hub where the application developers or vendors share their chaos experiments so that their users can use them to increase the resilience of the applications in production.
@@ -43,7 +43,7 @@ Check out the <a href="https://docs.litmuschaos.io/docs/next/getstarted.html" ta
 
 ## Contributing to Chaos Hub
 
-Check out the <a href="https://github.com/litmuschaos/community-charts/blob/master/CONTRIBUTING.md" target="_blank">Contributing Guildelines for the Chaos Hub</a>
+Check out the <a href="https://github.com/litmuschaos/community-charts/blob/master/CONTRIBUTING.md" target="_blank">Contributing Guidelines for the Chaos Hub</a>
 
 ## Adopters
 
@@ -53,16 +53,16 @@ Check out the <a href="https://github.com/litmuschaos/litmus/blob/master/ADOPTER
 
 ## Things to Consider
 
-Some of the considerations that need to be made with Litmus (as a chaos framework), are broadly listed here. Many of these are already being worked on
+Some of the considerations that need to be made with Litmus (as a chaos framework) are broadly listed here. Many of these are already being worked on
 as mentioned in the [ROADMAP](./ROADMAP.md). For details or limitations around specific experiments, refer to the respective [experiments docs](https://docs.litmuschaos.io/docs/pod-delete/).
 
-- Network chaos for container runtimes other than Docker, such as containerd, CRIO is not supported yet
-- Litmus chaos operator and the chaos experiments run as kubernetes resources in the cluster. In case of airgapped environments, the chaos custom resources
-  and images need to be hosted on premise.
-- When attempting to execute platform specific chaos experiments (like those on AWS, GCP cloud) the access details are passed via kubernetes secrets. Support
+- Network chaos for container runtimes other than Docker, such as container, CRIO is not supported yet
+- Litmus chaos operator and the chaos experiments run as Kubernetes resources in the cluster. In the case of air-gapped environments, the chaos custom resources
+  and images need to be hosted on the premise.
+- When attempting to execute platform-specific chaos experiments (like those on AWS, GCP cloud) the access details are passed via Kubernetes secrets. Support
   for other modes of secret management with Litmus is yet to be tested/implemented.
-- Some chaos experiments make use of the docker api from within the experiment pods, and thereby require the docker socket to be mounted. User discretion is
-  advised when allowing developers/devops admins/SREs access for running these experiments.
+- Some chaos experiments make use of the docker API from within the experiment pods, and thereby require the docker socket to be mounted. User discretion is
+  advised when allowing developers/DevOps admins/SREs access for running these experiments.
 - In (rare) cases where chaos experiments make use of privileged containers, the recommended security policies will be documented.
 
 ## License
@@ -77,7 +77,7 @@ Litmus Chaos is part of the CNCF Projects.
 
 ## Community
 
-The Litmus community meets on the third wednesday of every month at 10:00PM IST/9.30 AM PST.
+The Litmus community meets on the third Wednesday of every month at 10:00 PM IST/9.30 AM PST.
 
 Community Resources:
 
